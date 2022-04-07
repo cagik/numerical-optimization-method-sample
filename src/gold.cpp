@@ -3,8 +3,19 @@
 
 using namespace std;
 
+double calE(double x){
+    double ex = 0, item = 1, i = 0;
+    while(item>1.0e-7){
+        ex += item;
+        i++;
+        item *= (x/i);
+    }
+    return ex;
+}
+
 double fun(double x){
-    return 3*pow(x,2) - 2 * tan(x);
+    return calE(-x) + x*x;
+    //return 3*pow(x,2) - 2 * tan(x);
 }
 
 int main(){
@@ -15,7 +26,7 @@ int main(){
 
     a = 0;
     b = 1;
-    end_fun = 1.0e-5;
+    end_fun = 0.2;
     end_h = 1.0e-4;
 
     h = b - a;
