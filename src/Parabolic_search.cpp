@@ -26,7 +26,8 @@ int main(){
     int i =1, maxi = 30;
 
     double f1;
-
+	
+    cout << "unfinished work, this method is suck. forget it" << endl;
 
     while(i < maxi && err > end_fun && cond != 5){
         f1 = (fun(s0 + ds) - fun(s0 - ds)) / (2 * ds);
